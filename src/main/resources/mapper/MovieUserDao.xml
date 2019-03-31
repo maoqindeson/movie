@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.maoqin.movie.dao.MovieUserDao">
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.maoqin.movie.entity.MovieUser" id="movieUserMap">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="movieTicket" column="movie_ticket"/>
+        <result property="price" column="price"/>
+    </resultMap>
+
+
+
+    <insert id="insertMovieUser" parameterType="com.maoqin.movie.entity.MovieUser">
+        insert into tb_movie_user (name,movie_ticket,price) values (#{name},#{movieTicket},#{price})
+    </insert>
+</mapper>
